@@ -1,0 +1,190 @@
+/* background */
+
+body {
+      margin: 0;
+      background: url('space.jpg') no-repeat center center fixed;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .solar-system {
+      position: relative;
+      width: 80vw;
+      height: 70vw;
+      max-width: 800px;
+      max-height: 700px;
+    }
+
+    /* Sun fixed in center */
+    .sun {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, #ffcc00, #ff6600);
+      border-radius: 50%;
+      box-shadow: 0 0 40px #ffcc00;
+      z-index: 10;
+    }
+
+    /* Orbit container rotates */
+    .orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border: 1px dashed rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .planet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+    /* Mercury */
+    .mercury-orbit {
+      width: 100px; height: 100px;
+      animation-duration: 8s;
+    }
+    .mercury {
+      width: 12px; height: 12px;
+      background: radial-gradient(circle, #a9a9a9, #696969);
+      transform: translateX(50px);
+    }
+
+    /* Venus */
+    .venus-orbit {
+      width: 150px; height: 150px;
+      animation-duration: 10s;
+    }
+    .venus {
+      width: 16px; height: 16px;
+      background: radial-gradient(circle, #ffa500, #ff8c00);
+      transform: translateX(75px);
+    }
+
+    /* Earth */
+    .earth-orbit {
+      width: 200px; height: 200px;
+      animation-duration: 12s;
+    }
+    .earth {
+      width: 20px; height: 20px;
+      background: radial-gradient(circle, #3a9bdc, #1b4f72);
+      transform: translateX(100px);
+    }
+
+    /* Mars */
+    .mars-orbit {
+      width: 300px; height: 300px;
+      animation-duration: 18s;
+    }
+    .mars {
+      width: 18px; height: 18px;
+      background: radial-gradient(circle, #ff6666, #990000);
+      transform: translateX(150px);
+    }
+
+    /* Jupiter */
+    .jupiter-orbit {
+      width: 400px; height: 400px;
+      animation-duration: 24s;
+    }
+    .jupiter {
+      width: 40px; height: 40px;
+      background: radial-gradient(circle, #ffcc66, #cc6600);
+      transform: translateX(200px);
+    }
+
+    /* Saturn */
+    .saturn-orbit {
+      width: 500px; height: 500px;
+      animation-duration: 30s;
+    }
+    .saturn {
+      width: 35px; height: 35px;
+      background: radial-gradient(circle, #ffff99, #cc9900);
+      transform: translateX(250px);
+      position: relative;
+    }
+    .saturn::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 70px; height: 20px;
+      border: 2px solid rgba(255,255,0,0.6);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotate(20deg);
+    }
+
+    /* Uranus */
+    .uranus-orbit {
+      width: 600px; height: 600px;
+      animation-duration: 36s;
+    }
+    .uranus {
+      width: 30px; height: 30px;
+      background: radial-gradient(circle, #aeefff, #0077b6);
+      transform: translateX(300px);
+    }
+
+    /* Neptune */
+    .neptune-orbit {
+      width: 700px; height: 700px;
+      animation-duration: 42s;
+    }
+    .neptune {
+      width: 28px; height: 28px;
+      background: radial-gradient(circle, #0000ff, #000033);
+      transform: translateX(350px);
+    }
+
+    /* navigation */
+    .navigation {
+      position: absolute;
+      top: 2em;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .navigation ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navigation li {
+      margin: 0 15px;
+
+    }
+
+    .navigation a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    .navigation a:hover {
+      text-decoration: underline;
+    }
